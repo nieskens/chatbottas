@@ -6,7 +6,7 @@ class CheckMessage(object):
         self.messages = {
             "Hi":["Hello, how are you?","Hey,you again!", "How have you been?","Goodday, what's up?"],
             "How are you?":["I'm good, thanks for asking!", "I'm fine, thanks!"]
-            }
+        }
 
     def check_message(self):
         if self.user_message in self.messages:
