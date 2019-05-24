@@ -1,6 +1,6 @@
 import random, time, re
 
-class Check_Message():
+class CheckMessage():
     def __init__(self,message):
         self.user_message = message
         self.messages = {
@@ -9,12 +9,14 @@ class Check_Message():
             }
 
     def check_message(self):
-       if self.user_message in self.messages:
+        if self.user_message in self.messages:
             return random.choice(self.messages[self.user_message])
+        else:
+            return False
 
 def dialogue():
     message = input()
-    response_obj = Check_Message(message)
+    response_obj = CheckMessage(message)
     response = response_obj.check_message()
     print("BOT: {}".format(response))
 
