@@ -1,7 +1,9 @@
 import checkmessage, checkpattern, random, re
 
+
 def dialogue():
     userMessage = input()
+    userMessage = userMessage.lower()
     messageObj = checkmessage.CheckMessage(userMessage)
     messageResult = messageObj.checkMessage()
     patternObj = checkpattern.CheckPattern(userMessage)
