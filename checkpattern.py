@@ -11,7 +11,7 @@ class CheckPattern(object):
 
     def checkPattern(self):
         for pattern in self.patterns:
-            match = re.search(pattern, self.userMessage)
+            match = re.search(pattern.lower(), self.userMessage.lower())
             if match:
                 answer = random.choice(self.patterns[pattern])
                 return answer.format(match.group(1))

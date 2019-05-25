@@ -2,10 +2,10 @@ import random
 
 class CheckMessage(object):
     def __init__(self,message):
-        self.user_message = message
+        self.user_message = message.lower()
         self.messages = {
-            "Hi":["Hello, how are you?","Hey,you again!", "How have you been?","Goodday, what's up?"],
-            "How are you?":["I'm good, thanks for asking!", "I'm fine, thanks!"]
+            "hi":["Hello, how are you?","Hey,you again!", "How have you been?","Goodday, what's up?"],
+            "how are you?":["I'm good, thanks for asking!", "I'm fine, thanks!"]
         }
 
     def checkMessage(self):
