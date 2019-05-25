@@ -1,4 +1,4 @@
-import checkmessage, checkpattern, random, re
+import conversation, random, re
 
 def stripPunctuation(message):
     if message.endswith(('!','?')):
@@ -14,16 +14,12 @@ def dialogue():
     userMessage = stripPunctuation(userMessage)
     
     # create objects to check for standard messages and patterns
-    messageObj = checkmessage.CheckMessage(userMessage)
-    messageResult = messageObj.checkMessage()
-    patternObj = checkpattern.CheckPattern(userMessage)
-    patternResult = patternObj.checkPattern()
+    conv = conversation.Conversation(userMessage)
+    botResponse = conv.checkMessage()
 
     # respond according to results
-    if messageResult:
-        print("BOT: {}".format(messageResult))
-    elif patternResult:
-        print("BOT: {}".format(patternResult))
+    if botResponse:
+        print("BOT: {}".format(botResponse))
     else:
         print("BOT: {}".format(random.choice(["Ok","Hmmm","That's interesting"]))) 
 
