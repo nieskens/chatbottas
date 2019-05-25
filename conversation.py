@@ -25,7 +25,7 @@ class Conversation(object):
         # the responses that the chatbot has given (to prevent repetition of responses)
         self.responsesGiven = []
 
-    def startOver():
+    def startOver(self):
         self.responsesGiven = []
 
     def addResponse(self,response):

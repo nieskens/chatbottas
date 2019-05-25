@@ -19,7 +19,7 @@ def dialogue():
     # create a new conversation unless the message is "start over"
     # create objects to check for standard messages and patterns
     if userMessage == "start over":
-        conv = conv.startOver()
+        conv.startOver()
     botResponse = conv.checkMessage(userMessage)
 
     # respond according to results
