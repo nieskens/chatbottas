@@ -8,7 +8,7 @@ class CheckMessage(object):
             "How are you?":["I'm good, thanks for asking!", "I'm fine, thanks!"]
         }
 
-    def check_message(self):
+    def checkMessage(self):
         if self.user_message in self.messages:
             return random.choice(self.messages[self.user_message])
         else:

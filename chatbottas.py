@@ -1,11 +1,15 @@
-import checkmessage, random
+import checkmessage, checkpattern, random, re
 
 def dialogue():
-    message = input()
-    check_obj = checkmessage.CheckMessage(message)
-    check_result = check_obj.check_message()
-    if check_result:
-        print("BOT: {}".format(check_result))
+    userMessage = input()
+    messageObj = checkmessage.CheckMessage(userMessage)
+    messageResult = messageObj.checkMessage()
+    patternObj = checkpattern.CheckPattern(userMessage)
+    patternResult = patternObj.checkPattern()
+    if messageResult:
+        print("BOT: {}".format(messageResult))
+    elif patternResult:
+        print("BOT: {}".format(patternResult))
     else:
         print("BOT: {}".format(random.choice(["Ok","Hmmm","That's interesting"]))) 
 
